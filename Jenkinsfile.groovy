@@ -22,7 +22,7 @@ node {
         }
     } finally {
         junit 'target/surefire-reports/**/*.xml'
-        sh "sl -al target"
+        sh "ls -al target"
         archiveArtifacts artifacts: 'target/goosegame-1.0-SNAPSHOT-jar-with-dependencies.jar', fingerprint: true
     }
 }
