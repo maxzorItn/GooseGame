@@ -18,7 +18,9 @@ node {
         }
         stage('Build Artifact') {
             sh "mvn package"
-
+        }
+        stage('Create container') {
+            sh "docker build -t goose-game ."
         }
     } finally {
         junit 'target/surefire-reports/**/*.xml'
